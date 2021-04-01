@@ -1,5 +1,9 @@
 import speech_recognition as sr
 from playsound import playsound
+from selenium import webdriver
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 
 
 def reconnaissance():
@@ -18,7 +22,12 @@ def reconnaissance():
         text = r.recognize_google(audio, language="fr-FR")
         if "Baptiste" in text or "baptiste" in text:
             print('Baptiste')
+            mic = driver.find_element_by_xpath("//*[@id='mic-enable']")
+            if mic.get_attribute("aria-pressed") == "false":
+                mic.click()
             playsound('larsen.mp3', block=True)
+            playsound('larsen.mp3', block=True)
+            mic.click()
     except sr.UnknownValueError:
         print("Google ne comprend pas votre audio")
     except sr.RequestError as e:
@@ -28,4 +37,7 @@ def reconnaissance():
 
 
 if __name__ == '__main__':
+    driver = webdriver.Chrome()
+    wait = WebDriverWait(driver, 600)
+    input('Tapes sur Entrée quand tu es connnecté')
     reconnaissance()

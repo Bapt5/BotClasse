@@ -11,7 +11,7 @@ def reconnaissance():
     r = sr.Recognizer()
     with sr.Microphone() as source:
         print("Ecoute en cours...")
-        audio = r.listen(source)
+        audio = r.listen(source, phrase_time_limit=15)
 
     # Speech recognition using Google Speech Recognition
     try:

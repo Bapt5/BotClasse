@@ -15,10 +15,7 @@ def reconnaissance():
 
     # Speech recognition using Google Speech Recognition
     try:
-        print('Traitement en cours')
-        # for testing purposes, we're just using the default API key
-        # to use another API key, use `r.recognize_google(audio, key="GOOGLE_SPEECH_RECOGNITION_API_KEY")`
-        # instead of `r.recognize_google(audio)`
+        print('Traitement en cours...')
         text = r.recognize_google(audio, language="fr-FR")
         if "Baptiste" in text or "baptiste" in text:
             print('Baptiste')

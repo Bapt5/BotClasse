@@ -2,3 +2,4 @@ SpeechRecognition
 playsound
 selenium
 pyaudio
+colorama

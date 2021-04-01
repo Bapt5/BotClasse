@@ -23,7 +23,6 @@ def reconnaissance():
             if mic.get_attribute("aria-pressed") == "false":
                 mic.click()
             playsound('larsen.mp3', block=True)
-            playsound('larsen.mp3', block=True)
             mic.click()
     except sr.UnknownValueError:
         print("Google ne comprend pas votre audio")

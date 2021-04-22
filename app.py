@@ -7,6 +7,7 @@ from selenium.webdriver.common.by import By
 import colorama
 from colorama import Fore
 from colorama import Style
+import chromedriver_autoinstaller
 
 
 def reconnaissance():
@@ -36,6 +37,7 @@ def reconnaissance():
 
 
 if __name__ == '__main__':
+    chromedriver_autoinstaller.install(True)
     colorama.init()
     driver = webdriver.Chrome()
     wait = WebDriverWait(driver, 600)

@@ -3,3 +3,4 @@ playsound
 selenium
 pyaudio
 colorama
+chromedriver-autoinstaller
